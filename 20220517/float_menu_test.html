@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .clearfix:after{content: "";display: block;clear: both;}
+
+        /* header  */
+        div.headerWrap{width: 1200px;background-color: skyblue;margin: 0 auto;}
+        div.headerWrap>h1{width: 100px;background-color: pink;float: left;line-height: 100px;text-align: center;}
+        div.headerWrap>nav.navbar{width: 700px;background-color: green;float:right;}
+        div.headerWrap>nav.navbar>ul>li{float: left;text-align: center;width: 25%; line-height: 100px;}
+
+        /* visual  */
+        .visual{height: 400px;background-color: pink;}
+
+        /* section  */
+        .section{width: 1200px;margin: 0 auto;}
+        .section>.contents{width: 850px;height: 500px;float: left;background-color: grey;}
+        .section>.aside{width: 340px;height: 500px;float: right; background-color: yellow;}
+
+        /* footer  */
+        .footer{background-color: aqua;}
+        .footer>address{width: 1000px;margin: 0 auto; padding: 20px 0 50px;}
+    </style>
+</head>
+<body>
+    <div class="headerWrap clearfix">
+        <h1>LOGO</h1>
+        <nav class="navbar">
+            <ul class="clearfix">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <div class="visual"></div>
+    <section class="section clearfix">
+        <div class="contents"></div>
+        <aside class="aside"></aside>
+    </section>
+
+    <footer class="footer clearfix">
+        <address>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, placeat!</address>
+    </footer>
+    
+</body>
+</html>
