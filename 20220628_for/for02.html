@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .total{width: 100px;height: 100px;background: skyblue;display: flex;justify-content: center;align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="total">0  </div>
+    <div class="total">1  </div>
+    <div class="total">1  </div>
+    <div class="total">1  </div>
+    <div class="total">1  </div>
+    <div class="total">1  </div>
+    <script>
+        let sum = 0;
+        for(let i=1;i<=100;i++){
+            // document.wirte(i+"<br>")
+            sum = sum + i;
+        }
+        // document.write(sum)
+
+        // document.getElementsByClassName("total")[0].innerHTML = sum
+        // querySelector 첫번째 아이템
+        // document.querySelector(".total").innerHTML = sum;
+        const total = document.querySelectorAll("div.total");
+
+        console.log(total.length)
+        for(let i=0;i<total.length;i++){
+
+            total[i].innerHTML = sum
+        }
+
+
+
+    </script>
+
+
+    <!-- let은 한번만 선언가능
+    let을 for밖에 쓰면 화면이 안나옴
+    변수선언, 재선언불가/
+    const 데이타 변경이 불가/
+    var은 여러번 선언가능
+총 데이터 개수구할 때 console에 length라고 치면 나옴 -->
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">
+    
+    </div>
+    <div class="box2">
+      
+    </div>
+    <div class="box3">
+       
+    </div>
+    <script>
+        function gugudan(dan,name){ //함수이름(매개변수,매개변수,매개변수){}
+            console.log('ok')
+
+            let text = "";
+
+            for( let i=2;1<10;i++){
+
+                
+                text +=`${dan} x ${i} = ${dan*i} <br>`
+            }
+            document.querySelector(name).innerHTML = text
+            //name은 변수니까""안들어가
+
+  
+      
+        }
+        gugudan(3,".box1") //querySelector니까.대입해야하니까 . ???
+
+        gugudan(4,".box2") //querySelector니까
+        gugudan(5,".box3") //querySelector니까
+
+
+    </script>
+    
+</body>
+</html>
