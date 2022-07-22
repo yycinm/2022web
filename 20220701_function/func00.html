@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fnc('홍길동')">버튼</button>
+    <button onclick="fnc('김철수')">버튼</button>
+    <button onclick="fnc('이영희')">버튼</button>
+
+    <div><span class="name">이름</span>님 안녕하세요!!!</div>
+    <div onclick="fnc">버튼</div>
+  
+    
+    <script>
+     
+        function fnc(name){
+            console.log(name)
+            document.querySelector(".name").innerHTML = name
+
+            
+
+        }
+        document.querySelector(".btn1").addEventListener("click",function(){fnc("홍길동");})
+        fnc();
+    </script>
+    
+</body>
+</html>

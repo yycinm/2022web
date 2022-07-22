@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        성명: <span class="name">홍길동</span>
+        나이: <span class="ageC">00살</span>
+        만나이: <span class="m">00살</span>
+    </div>
+    <button onclick="insertName('야나두',20,2)">야나두</button>
+    <hr>
+    나의 이름은 <span class="myName">슈퍼맨</span>입니다.
+    <script>
+        const text1 = "text1";
+        const text2 = "text2";
+
+        print(text1)
+        function print(name){
+            document.write(name)
+        }
+
+        print(text2)
+     
+      
+
+        function insertName(name,age,m){
+            let ageC = 100 - m;
+            document.querySelector(".name").innerHTML = name;
+            document.querySelector(".ageC").innerHTML = age;
+            document.querySelector(".m").innerHTML =m;
+        }
+
+        const fncName =function(num1,num2){
+            let add = num1 +num2;
+            return add;
+        }
+        function fncCount(num1,num2){
+            let minus = num1-num2;
+            return minus;
+        }
+
+        let view = fncCount(110,80)
+
+        document.querySelector(".myname").innerHTML = view
+
+
+
+    </script>
+    
+</body>
+</html>

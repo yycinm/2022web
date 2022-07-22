@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=".././js/jquery-3.1.1.min.js"></script>
+    <style>
+        .toggle{
+            width: 100px;height: 100px;border: 1px solid #000;
+            display: flex;justify-content: center;align-items: center;
+            position: relative;
+        }
+
+        .toggle div{width: 70px;height: 10px;background-color: #000;position: absolute;transition: .3s;}
+
+        .toggle .bar1{transform: translateY(30px);}
+        .toggle .bar3{transform: translateY(-30px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(225deg);}
+        .toggle.active .bar2{opacity: 0;} 
+        .toggle.active .bar3{transform: translateY(0) rotate(-225deg);}
+
+        #box{width: 400px;height: 400px;background-color: #ffa147;display: none;}
+        #box.view{display:block}
+
+
+    </style>
+    
+</head>
+<body>
+    <div class="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div id="box"></div>
+
+    <script>
+        const toggleElem =document.querySelector(".toggle")
+        const boxElem =document.querySelector("#box")
+
+        function toggle(){}
+        toggleElem.addEventListener("click",function(){
+
+            toggleElem.classList.toggle("active");
+            boxElem.classList.toggle("view");
+        })
+
+
+        let on = true
+        $(".toggle").on("click",function(){
+            if( on == true){
+                $(".toggle").addClass("active"),
+                $("#box").addClass("view");
+                on = false
+            }else{
+                $(".toggle").removeClass("active"),
+                $("#box").removeClass("view");
+                on = true
+            }
+
+        })
+        
+
+
+        
+    </script>
+</body>
+</html>

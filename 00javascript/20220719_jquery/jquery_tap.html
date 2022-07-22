@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_tap</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .wrap ul{display: flex;}
+        .wrap ul li{cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><img src="../../images/btn1_1.jpg" alt=""></li>
+            <li><img src="../../images/btn2_1.jpg" alt=""></li>
+            <li><img src="../../images/btn3_1.jpg" alt=""></li>
+            <li><img src="../../images/btn4_1.jpg" alt=""></li>
+        </ul>
+        <div class="images">
+            <img src="../../images/spring.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        // $(".wrap> ul > li").eq(0).click(function(){
+        //     console.log($(".images > img").attr("src"))
+        //     $(".images > img").attr("src","../../images/spring.jpg")
+        // })
+        // $(".wrap> ul > li").eq(1).click(function(){
+        //     console.log($(".images > img").attr("src"))
+        //     $(".images > img").attr("src","../../images/summer.jpg")
+        // })
+        // $(".wrap> ul > li").eq(2).click(function(){
+        //     console.log($(".images > img").attr("src"))
+        //     $(".images > img").attr("src","../../images/fall.jpg")
+        // })
+        // $(".wrap> ul > li").eq(3).click(function(){
+        //     console.log($(".images > img").attr("src"))
+        //     $(".images > img").attr("src","../../images/winter.jpg")
+        // })
+
+
+            const img =["spring","summer","fall","winter"]
+
+            // for(let i=0;i<img.length;i++){
+            //     $(".wrap >ul >li").eq(i).click(function(){
+            //         $(".images >img").attr("src",`../../images/${img[i]}.jpg`)
+            //     })
+            // }
+
+            $(".wrap li").click(function(){
+                const $list = $(".wrap li")
+                console.log($(this).index())
+                $(".images >img ").attr("src",`../../images/${img[$(this).index()]}`)
+
+            })
+
+            
+
+   
+            
+        
+
+
+    </script>
+
+
+</body>
+</html>

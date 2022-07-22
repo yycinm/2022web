@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object02</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .table{display: flex;}
+    </style>
+</head>
+<body>
+    <div>영어 <span class="eng">0</span>점</div>
+    <div class="content"></div>
+    <script>
+        const obj = {
+            eng:100,
+            math:90,
+            kor:80,
+            levelup:function(){
+                return this.eng + 10
+            }
+
+        }
+        // const arr =[10,30,20]
+
+        // obj.forEach(function(item,index){
+        //     console.log(item)
+
+        // });
+
+        // for(let i in obj){
+        //     console.log(i + "i" + obj[i])
+        // }
+
+        document.querySelector(".eng").innerHTML = obj.levelup();
+
+        const viewdata = [
+            {idex:1, title:'안녕하세요',content:"만나서 반갑습니다",name:"홍길동",date:"20220713"},  //viewdata[0]
+            {idex:2, title:'안녕하세요',content:"만나서 반갑습니다2",name:"홍길동",date:"20220713"},  //viewdata[1]
+            {idex:3, title:'안녕하세요',content:"만나서 반갑습니다3",name:"홍길동",date:"20220713"},  //viewdata[2]
+            {idex:4, title:'안녕하세요',content:"만나서 반갑습니다4",name:"홍길동",date:"20220713"},  //viewdata[3]
+            {idex:5, title:'안녕하세요',content:"만나서 반갑습니다5",name:"홍길동",date:"20220713"},  //viewdata[4]
+         
+          
+        ]
+
+        let txt ="";
+        for(let i=0;i<viewdata.length;i++){
+            console.log(viewdata[i].title)
+           txt += `<ul class= "table">
+            <li>${viewdata[i].idex}</li>
+            <li>${viewdata[i].title}</li>
+            <li>${viewdata[i].name}</li>
+            <li>${viewdata[i].date}</li>
+             </ul>`;
+        }
+
+
+        document.querySelector(".content").innerHTML = txt;
+    </script>
+
+
+</body>
+</html>

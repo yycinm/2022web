@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        html,body{height: 100%;}
+        body{display: flex;justify-content: center;align-items: center;}
+        .num{display: flex;gap: 10px;}
+        .num li{width: 30px;height: 30px;border-radius: 15px;background: #ccc;
+            display: flex;justify-content: center;align-items: center;
+        line-height: 16px;}
+    </style>
+</head>
+<body>
+
+<script src="js/script.js"></script>
+</body>
+<ul class="num">
+
+</ul>
+<script>
+    let list=[];
+    for(let i=1;i<46;i++){
+        list.push(i)
+    }
+
+    let result = [];
+    for(let i=0;i<6;i++){
+        let index = Math.floor(Math.random() * list.length);
+
+        let num = list[index];
+        list.splice(index,1)
+
+        result.push(num)
+
+    }
+
+    result.sort(function(a,b){
+        return a-b;
+    })
+
+    let txt = ""
+    result.forEach(function(item,index){
+        txt += `<li>${item}</li>`
+
+    })
+
+    console.log(txt)
+    document.querySelector(".num").innerHTML = txt;
+</script>
+</html>
