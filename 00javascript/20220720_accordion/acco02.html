@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acoo01</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {}
+
+        .submenu {
+            display: none;
+        }
+
+        .menuWrap {
+            width: 200px;
+        }
+
+        .menu>li {
+            border: 1px solid #ccc;
+            margin-top: -1px;
+            position: relative;
+        }
+
+        .menu>li>a {
+            display: flex;
+            height: 40px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            background: #eee;
+
+        }
+
+        .menu>li>a i {
+            transition: .3s;
+        }
+
+        .menu>li.hover .submenu {
+            display: block;
+        }
+
+        .menu>li>a.active i {
+            transform: rotate(90deg);
+        }
+
+        .menu>li .submenu {
+            padding: 10px 16px;
+            position: absolute;
+            right: -100%;
+            width: 100%;
+            top: 0;
+            background: skyblue;
+            /* transform:translateX(-100px);opacity:0;transition:0.3s */
+
+        }
+
+        .menu>li .submenu a {
+            display: block;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .menu>li.on .submenu {
+            /* transform:translateX(0);opacity:1 */
+        }
+
+
+
+        .menu li .submenu li {
+            transform: translateX(-30px);
+            opacity: 0;
+            transition: 0.3s
+        }
+
+        .menu li .submenu li:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+
+        .menu li .submenu li:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .menu li .submenu li:nth-child(3) {
+            transition-delay: 0.6s;
+        }
+
+        .menu li .submenu li:nth-child(4) {
+            transition-delay: 0.8s;
+        }
+
+        .menu li.on .submenu li {
+            transform: translateX(0);
+            opacity: 1
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menuWrap">
+        <ul class="menu">
+            <li><a href="#">menu01 <i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="http://www.naver.com">sub01_01</a></li>
+                    <li><a href="#">sub01_02</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">menu02 <i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">sub02_01</a></li>
+                    <li><a href="#">sub02_02</a></li>
+                    <li><a href="#">sub02_03</a></li>
+                    <li><a href="#">sub02_04</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu03 <i class="fa-solid fa-circle-chevron-up"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">sub03_01</a></li>
+                    <li><a href="#">sub03_02</a></li>
+                    <li><a href="#">sub03_03</a></li>
+                    <li><a href="#">sub03_04</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+
+        // $(".menu>li>a").click(function(e){
+        //     e.preventDefault();
+        //     let myHeight = $(this).parent().find(".submenu").height()
+        //     console.log(myHeight)
+
+        //     $(".menu>li>a").parent().find(".submenu").hide() //#3
+
+
+        //     if( $(this).hasClass("active") ){ //#4
+        //         $(".menu>li>a").removeClass("active");
+        //         $(".menu>li>a").parent("li").height("initial");
+        //         $(".menu>li").removeClass("on");
+
+        //     }else{
+        //         $(".menu>li").removeClass("on");
+        //         $(this).parent().find(".submenu").show();
+        //         $(".menu>li>a").removeClass("active");
+        //         $(this).addClass("active"); 
+        //         $(".menu>li>a").parent("li").height("initial");
+        //         $(this).parent("li").height(myHeight+20);
+        //         $(this).parent("li").addClass("on");
+        //     }
+        // })
+
+        $(".menu>li").click(function () {
+            $(".menu>li").removeClass("on").find(".submenu").hide()
+            $(this).addClass("on");
+            $(this).find(".submenu")
+                .css({ "right": "-80%", "opacity": 0, "display": "block" })
+                .animate({ "right": "-100%", "opacity": 1 }, 300)
+        })
+
+    </script>
+
+</body>
+
+</html>

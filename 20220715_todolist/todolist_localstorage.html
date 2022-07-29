@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist02_localstrage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" class="inp">
+    <button class="btn1">오늘할일</button>
+    <ul class="listView">
+
+    </ul>
+    <button class="btn2">전체삭제</button>
+
+    <script>
+        let listData= [];
+
+        // init
+        const inp = document.querySelector(".inp");
+        const btn1 = document.querySelector(".btn1");
+        const btn2 = document.querySelector(".btn2");
+        const listView = document.querySelector(".listView");
+
+        btn1.addEventListener("click",function(){
+            let value = inp.value;
+            
+            if(value != ""){
+                listData.push(value);
+                localStorage.setItem(value,value);
+                inp.value = ""
+            }else{
+                alert("오늘할일을 입력하세요")
+            }
+            viewData(); //순서:1
+        });
+        function viewData(){
+            // for(let i=0;i<listData.length;i++){}
+            
+            listData = [];
+            for(let i=0;i<localStorage.length;i++){
+                 listData.push(localStorage.key(i))  
+            }//순서:3
+
+            let viewList = ""; //item은 내가 입력한거, 인덱스는 순서(숫자0.1.2....)
+            listData.forEach(function(item,index){
+                console.log(item,listData[index]);
+                // viewList +=  `<li>${item}</li>`;
+                //console.log(item,listData[index]);
+                viewList +=  `<li>${item} <span onclick="mydel('${item}',${index})">[del]</span></li>`;
+            })
+
+
+            listView.innerHTML = viewList; //순서:2
+        }
+
+        viewData();
+
+
+        function mydel(item,index){
+            listData.splice(index,1);
+            localStorage.removeItem(item);
+            viewData(); //viewData는 화면에 보여주려고
+        }//순서:4
+
+        btn2.addEventListener("click",function(){
+            listData = [];
+            localStorage.clear();
+            viewData();
+        })//순서:5
+    </script>
+
+</body>
+</html>

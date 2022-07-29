@@ -6,51 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <link rel="stylesheet" href="../../css/reset.css">
-
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        .menu{display: flex;width: 600px;justify-content: center;}
-        .menu li{width: 100px;height: 50px;
-        border: 1px solid grey;cursor: pointer;
-    display: flex;justify-content: center;align-items: center;
-font-size: 20px;}
-        .menu li.active{background:pink;
-        border:none}
-        .content{width: 600px;height: 300px;
-            border: 1px solid grey;
+        .menu{display: flex;}
+        .menu>li{background-color: beige;
             display: flex;justify-content: center;align-items: center;
-        padding: 0 30px;}
+        width: 100px;height: 50px}
 
-            .content div{display: none;font-size: 20px;font-weight: 300;}
-
-
-
+        .content>div{width: 500px;height: 150px;
+            background-color: aquamarine;
+        
+    display: flex;align-items: center;justify-content: center;display: none;}
     </style>
 </head>
 <body>
     <ul class="menu">
-        <li><a href="#">tab1</a></li>
-        <li><a href="#">tab2</a></li>
-        <li><a href="#">tab3</a></li>
+        <li>tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
     </ul>
-
     <div class="content">
-        <div>1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, modi aut ullam, nobis harum omnis enim numquam pariatur error consequatur beatae officiis magnam illo autem fugiat, accusantium repudiandae necessitatibus obcaecati.</div>
-        <div>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, modi aut ullam, nobis harum omnis enim numquam pariatur error consequatur beatae officiis magnam illo autem fugiat, accusantium repudiandae necessitatibus obcaecati.</div>
-        <div>3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, modi aut ullam, nobis harum omnis enim numquam pariatur error consequatur beatae officiis magnam illo autem fugiat, accusantium repudiandae necessitatibus obcaecati.</div>
-        
+        <div>1.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, est.</div>
+        <div>2.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, est.</div>
+        <div>3.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, est.</div>
     </div>
 
+
     <script>
-        $(".menu li").click(function(){
-            $(".menu li").removeClass("active")
-            $(this).addClass("active")
+        $(".menu>li").click(function(){
+            $(".menu li").removeClass("active");
+            $(this).addClass("active");
 
-            let i = $(this).index()
-            $( ".content div" ).hide().eq(i).show()
+            let i= $(this).index();
+            $(".content>div").hide().eq(i).show()
         })
+        
     </script>
-
 </body>
 </html>
