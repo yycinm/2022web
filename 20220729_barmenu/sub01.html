@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="./index.html">LOGO</a></h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./sub01.html">0menu1</a></li>
+                <li><a href="./sub02.html">1menu2</a></li>
+                <li><a href="./sub03.html">2menu3</a></li>
+                <li><a href="./sub04.html">3menu4</a></li>
+                <li><a href="./sub05.html">4menu5</a></li>
+            </ul>
+            <div class="bar"></div>
+        </nav>
+    </div>
+    <div class="subVisual company" >
+        <h2>COMPANY</h2>
+    </div>
+
+    <div class="container sub">
+        <ul class="tab">
+            <li class="active">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+            <li>tab4</li>
+        </ul>
+        <div class="content">
+            <div>1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium unde provident deserunt culpa expedita eum alias perferendis? Officiis, ut repellat!</div>
+            <div>2 Voluptatibus iure dolorem ex consectetur nesciunt soluta voluptate, asperiores iste magni assumenda ducimus adipisci quo? Veniam illum hic dolor voluptatibus!</div>
+            <div>3 Quo, cupiditate. Laboriosam modi amet quam. Ipsum sequi quia quaerat qui, quibusdam consectetur a assumenda quo perspiciatis nihil! Magni, incidunt!</div>
+            <div>4 Ipsam enim expedita asperiores cupiditate nemo ea, labore porro consectetur non illo accusamus beatae, sunt iusto. Unde expedita ducimus molestiae?</div>
+        </div>
+    </div>
+<script src="js/script.js"></script>
+<script>
+    nowMenu(0); //depth1
+
+    //depth2
+    let params = new URLSearchParams(location.search);
+    console.log(params.get("submenu"))
+
+
+    function tab(){
+        $(".tab li").click(function(){
+            let i = $(this).index();
+            $(".tab li").removeClass("active");
+            $(this).addClass("active")
+
+            $(".content div").hide().eq(i).show()
+        })
+    }
+
+
+    function views(i){
+        if( i != null){
+            $(".tab li").removeClass("active").eq(i).addClass("active");
+            $(".content div").hide().eq(i).show();
+            tab()
+        }else{
+            tab()
+        }
+    }
+
+    views( params.get("submenu") )
+</script>
+</body>
+</html>
