@@ -104,7 +104,7 @@
                                 <i class="fa-solid fa-disease" onclick="mod(${i},'${listData[i].todo})'"></i>`;
 
             if(listData[i].done == true){
-                viewList += `<i class="fa-regular fa-calendar-check" onclick="done(${i})"></i>`
+                viewList += `${listData[i].todo}<i class="fa-regular fa-calendar-check" onclick="done(${i})"></i>`
             }else{
                 viewList += `<i class="fa-solid fa-power-off" onclick="done(${i})"></i>`
             }
