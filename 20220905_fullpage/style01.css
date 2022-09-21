@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+ul, li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navTop {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+}
+.navTop h1 {
+  font-size: 40px;
+}
+.navTop .gnb {
+  margin-left: auto;
+}
+.navTop .gnb ul {
+  display: flex;
+  height: 100%;
+}
+.navTop .gnb li {
+  height: 100%;
+}
+.navTop .gnb li:hover, .navTop .gnb li.active {
+  background: skyblue;
+}
+.navTop .gnb li a {
+  height: 100%;
+  padding: 0 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  height: 10px;
+  border-radius: 10%;
+  opacity: 0.5;
+  width: 100px;
+  margin-bottom: 50px;
+}
+
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+  height: 30px;
+  width: 100px;
+  margin: -6px 0 0 -24px;
+  border-radius: 10%;
+  background: linear-gradient(90deg, #F5F7FA 0%, #C3CFE2 100%);
+  opacity: 0.5;
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+  margin: 30px;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+  right: 0px;
+  bottom: 5px;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap div {
+  position: absolute;
+}
+.wrap div.txt1 {
+  transform: translateY(200px);
+  opacity: 0;
+}
+.wrap div.txt2 h2:nth-child(1) {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+.wrap div.txt2 h2:nth-child(2) {
+  transform: translateX(200px);
+  opacity: 0;
+}
+.wrap div.txt3 h2:nth-child(1) {
+  transform: translateY(-200px);
+  opacity: 0;
+}
+.wrap div.txt3 h2:nth-child(2) {
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 0.3s;
+}
+@-webkit-keyframes txtAni1 {
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+@keyframes txtAni1 {
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes txtAni21 {
+  60% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+}
+@keyframes txtAni21 {
+  60% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes txtAni22 {
+  60% {
+    transform: translateX(-20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+}
+@keyframes txtAni22 {
+  60% {
+    transform: translateX(-20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes txtAni31 {
+  70% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes txtAni31 {
+  70% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes txtAni32 {
+  70% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes txtAni32 {
+  70% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.wrap.move .txt1 {
+  -webkit-animation: txtAni1 1.5s alternate forwards;
+          animation: txtAni1 1.5s alternate forwards;
+}
+.wrap.move .txt2 h2:nth-child(1) {
+  -webkit-animation: txtAni21 2s alternate forwards;
+          animation: txtAni21 2s alternate forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.wrap.move .txt2 h2:nth-child(2) {
+  -webkit-animation: txtAni22 2s alternate forwards;
+          animation: txtAni22 2s alternate forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+.wrap.move .txt3 {
+  transition: 0.3;
+}
+.wrap.move .txt3 h2:nth-child(1) {
+  -webkit-animation: txtAni31 2s alternate forwards;
+          animation: txtAni31 2s alternate forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+.wrap.move .txt3 h2:nth-child(2) {
+  -webkit-animation: txtAni32 2s alternate forwards;
+          animation: txtAni32 2s alternate forwards;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.page1 .txtWrap {
+  transform: translateY(100px);
+  transition: 0.3s;
+  opacity: 0;
+}
+.page1 .txtWrap.move {
+  transform: translateY(0);
+  opacity: 1;
+}
+.page1 #myVedio {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page2 .txtWrap {
+  transform: translateY(-100px);
+  transition: 0.3s;
+  opacity: 0;
+}
+.page2 .txtWrap.move {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.page3 .txtWrap {
+  transform: translateX(-100%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.page3 .txtWrap.move {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.page4 .txtWrap {
+  transform: translateX(100%);
+  transition: 0.3s;
+  opacity: 0;
+}
+.page4 .txtWrap.move {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section {
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section.page1 {
+  background-image: url(images/bg1.jpg);
+}
+.section.page1 .scrollBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: xScroll 1s infinite alternate;
+          animation: xScroll 1s infinite alternate;
+}
+@-webkit-keyframes xScroll {
+  100% {
+    bottom: 50px;
+  }
+}
+@keyframes xScroll {
+  100% {
+    bottom: 50px;
+  }
+}
+.section.page2 {
+  background-image: url(images/bg2.jpg);
+}
+.section.page3 {
+  background-image: url(images/bg3.jpg);
+}
+.section.page4 {
+  background-image: url(images/bg4.jpg);
+}
+.section.page4 .container {
+  transform: translateY(-200px);
+}/*# sourceMappingURL=style01.css.map */

@@ -1,0 +1,19 @@
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+}
+
+.gnb{
+    height: 200px;width: 100%;display: flex;justify-content: center;
+    align-items: center;position: fixed;margin: 0 auto;
+
+    ul{display: flex;height: 100%;background: skyblue;width: 100%;
+    
+    }
+    li{display: flex;background: pink;height: 100%;width: 100%;}
+}
+
+.wrap{height: 100vh;width: 100%;}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg01</title>
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .box {
+            width: 800px;
+            height: 800px;
+            background: url(test.svg);
+
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .cir {
+            fill: red;
+            stroke: pink;
+            stroke-width: 10;
+            stroke-dasharray: 10;
+            /* pixel안써도 됌 */
+
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="100" height="100">
+        <circle class="cir" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        <!-- css가 우선(fill) -->
+
+    </svg>
+
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 200 200">
+        <style>
+            .st2,
+            .st3 {
+                fill: none;
+                stroke: #000;
+            }
+
+            .st2 {
+                stroke-width: 2.7462;
+                stroke-linecap: round
+            }
+
+            .st3 {
+                stroke-width: 2.5184
+            }
+
+            .hair1 {
+                fill: #27aae1;
+                stroke: #000;
+                stroke-width: 3;
+                stroke-dasharray: 10px;
+                stroke-dashoffset: 10px;
+                stroke-linecap: round;
+            }
+
+            < !-- style="fill:#27aae1;stroke:#000;stroke-width:2.7462;stroke-miterlimit:10" / -->
+        </style>
+        <path class="hair1"
+            d="M179.8 101.1c0 47.3-35.7 69.7-79.8 69.7s-79.8-22.4-79.8-69.7S56 15.5 100 15.5s79.8 38.3 79.8 85.6z">
+            <path d="M40 119.8c0-35.6 120-35.6 120 0s-26.9 64.4-60 64.4-60-28.8-60-64.4z" />
+            <path class="st2" d="M100 93.1V52.4M65.7 97.4V62.9M134 97.4V62.9" />
+            <circle cx="86.4" cy="126.3" r="2.9" />
+            <circle cx="115.9" cy="126.3" r="2.9" />
+            <path class="st3" d="M101.7 170.6c11.4 0 20.6-11.6 20.6-25.8H81c0 14.2 9.3 25.8 20.7 25.8z" />
+            <path class="st3" d="M88 165.4s3.1-12.2 14.5-12.2 12.2 10.2 12.2 10.2" />
+    </svg>
+    <div class="box">
+
+    </div>
+    <img src="img/circle.svg" alt="">
+    <style type="text/css">
+                .st0 {
+                    fill: #A7AAD6;
+                    stroke: #000000;
+                    stroke-miterlimit: 10;
+                    transition:0.3s;
+                    stroke-dashoffset: 800;
+                    stroke-dasharray:700;
+                    animation: st 5s infinite forwards;
+                    
+
+                }
+
+                @keyframes st {
+                    100%{  fill: pink;
+                stroke-dashoffset: 0;}
+                    
+                  
+                    
+                }
+                @keyframes st10 {
+                    100%{  stroke:#3c5020;
+                stroke-dashoffset: 0;}
+                    
+                  
+                    
+                }
+
+                
+                .st0:hover{}
+            </style>
+    <div class="box3">
+        <svg viewBox="0 0 100 100">
+            <circle cx="49.8" cy="47.4" r="33.22">
+          </svg>
+    </div>
+
+    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="cir1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A7AAD6;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:#000521;}
+	.st2{fill:#080B28;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:none;}
+</style>
+<path class="st0" d="M27.98,47.7c0,0-8.91-7.25,2.26-20.55s21.5,0.71,21.5,0.71s10.1,14.26,4.4,19.84s11.05,10.81,11.05,10.81
+	c6.42,2.14,6.42,2.14,6.42,2.14l-20.08-2.02l6.06,8.55l-10.48-6.42l-2.36,8.44l-2.85-9.39l-7.72,8.2l-0.24-9.86L22.51,64.1
+	l5.23-8.91L9.56,62.08L27.98,47.7z"/>
+<path class="st1" d="M35.14,37.19c-0.8,0-1.46-0.65-1.46-1.46s0.65-1.46,1.46-1.46c0.8,0,1.46,0.65,1.46,1.46
+	S35.94,37.19,35.14,37.19"/>
+<circle class="st1" cx="45.21" cy="35.73" r="1.46"/>
+<circle class="st1" cx="39.96" cy="39.27" r="1.46"/>
+<path class="st2" d="M39.96,40.22c-3.67,4.04-3.67,4.04-3.67,4.04l0,0L39.96,40.22z"/>
+<path class="st2" d="M43.43,44.26l-3.46-4.04L43.43,44.26z"/>
+<path class="st3" d="M129,81.56c-1.53-0.08-2.68-0.75-3.42-1.71c0,0,0-0.01-0.01-0.01c-0.28-0.35-0.5-0.75-0.67-1.16c0,0,0,0,0,0
+	c-0.11-0.26-0.19-0.53-0.26-0.81v0c0-0.02-0.01-0.04-0.01-0.06c0,0,0,0,0,0c-0.06-0.26-0.1-0.53-0.12-0.8c0,0,0,0,0,0v0h-3.47
+	c0.07,0.62,0.04,1.26-0.1,1.87c0,0,0,0,0,0c-0.07,0.3-0.16,0.6-0.28,0.89l0,0c-0.12,0.29-0.26,0.56-0.43,0.82c0,0,0,0,0,0
+	c-0.67,1.04-1.76,1.81-3.24,2c0,0,0,0,0,0V86h12L129,81.56L129,81.56z"/>
+</svg>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="cir1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st00{fill:none;}
+	.st10{fill:none;stroke:#AFE85D;stroke-width:9;stroke-linecap:round;stroke-miterlimit:10;
+        stroke-dashoffset: 800;
+        stroke-dasharray:700;
+        animation: st10 5s infinite forwards;
+        }
+        
+</style>
+<path class="st00" d="M129,81.56c-1.53-0.08-2.68-0.75-3.42-1.71c0,0,0-0.01-0.01-0.01c-0.28-0.35-0.5-0.75-0.67-1.16c0,0,0,0,0,0
+	c-0.11-0.26-0.19-0.53-0.26-0.81v0c0-0.02-0.01-0.04-0.01-0.06c0,0,0,0,0,0c-0.06-0.26-0.1-0.53-0.12-0.8c0,0,0,0,0,0v0h-3.47
+	c0.07,0.62,0.04,1.26-0.1,1.87c0,0,0,0,0,0c-0.07,0.3-0.16,0.6-0.28,0.89l0,0c-0.12,0.29-0.26,0.56-0.43,0.82c0,0,0,0,0,0
+	c-0.67,1.04-1.76,1.81-3.24,2c0,0,0,0,0,0V86h12L129,81.56L129,81.56z"/>
+<path class="st10" d="M10.99,60.42c0,0-0.59,9.74,2.97,11.29s13.66,3.56,12.24-5.11c-1.43-8.67-0.59-8.44-0.59-8.44l5.94,33.03
+	c0,0-6.3,14.26-16.99,4.16s39.56-31.13,39.56-31.13s-8.55,21.14-2.26,17.28l22.05-7.54"/>
+</svg>
+
+
+</body>
+
+</html>
