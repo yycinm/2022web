@@ -83,19 +83,19 @@
   
 
 
-    const myid = "4eedfeb184dc7cb08af6c0bd529c48b9";
+    const myid = "c20ceaf4968f148c72340d10360246bc";
 
     wSearch("incheon");
     function wSearch(loc){
 
-        axios.get(" https://api.openweathermap.org/data/2.5/weather?q="+ loc +"&appid=" + myid +
+        axios
+        .get(" https://api.openweathermap.org/data/2.5/weather?q="+ loc +"&appid=" + myid,
         { params: {units:"metric"}})
         .then(onSuccess)
         .catch(onError)
      
     }
 
-    function onBefore(){}
     function onSuccess(v){
         console.log(v.data)
         let city = v.data.name;
@@ -117,7 +117,7 @@
 
         $("body").css("background-image",`url(https://source.unsplash.com/1600x900/?${city})`)
     }
-    function onError(xhr,status,error){
+    function onError(error){
         console.log("error")
         alert("지역확인후 입력하세요!!!")
     }

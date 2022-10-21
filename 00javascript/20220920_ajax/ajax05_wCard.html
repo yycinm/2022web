@@ -12,17 +12,18 @@
         html,body{height: 100%;}
         *{
             margin: 0;padding: 0;
+            box-sizing: ;
         }
         body{display: flex;justify-content: center;align-items: center;
         background-image: url(https://source.unsplash.com/1600x900/?seoul);
     background-repeat: no-repeat;background-size: cover;background-position: center;}
         .card{width: 300px;background: #ccc;padding: 20px;border-radius: 10px;position: relative;}
         .search{
-            display: flex;
+            display: flex;gap: 10px;
         }
         .search .inp-search{
             flex: 1 0 auto; 
-            /* 공부하기 */
+            /*flex공부하기 */
         }
         .search .btnIcon{
             width: 30px;height: 30px;background: #000;color: white;border-radius: 50%;
@@ -31,7 +32,7 @@
         }
        h2.city{
             position: absolute;
-            top: -37px;
+            top: -53px;
             font-size: 3em;
             color: white;
             text-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -53,10 +54,23 @@
             <div class="desc">Cloudy</div>
         </div>
         <div>humidity : <span class="humidity">60%</span></div>
-        <div>wind : <span class="wind">6.2km/h</span></div>
+        <div>wind speed: <span class="wind">6.2km/h</span></div>
     </div>
 </div>
 <script>
+     // $.ajax({
+    //     url:"dd",
+    //     dataType:"json",
+    //     data:{},
+    //     beforeSend:onBefore,
+    //     success:onSuccess,
+    //     error:onError
+    // })
+
+    // function onBefore(){}
+    // function onSuccess(data){}
+    // function onError(xhr,status,error){}
+
     const myid = "c20ceaf4968f148c72340d10360246bc"
 
     wSearch("seoul");
@@ -91,7 +105,7 @@
         $(".humidity").html(humidity);
         $(".wind").html(wind);
 
-        $("body").css("background-img",`https://source.unsplash.com/1600x900/?${icon}`)
+        $("body").css("background-image",`url(https://source.unsplash.com/1600x900/?${city})`)
     }
 
     function onError(xhr,status,error){

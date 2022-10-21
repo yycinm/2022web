@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.css"
+    integrity="sha512-303pOWiYlJMbneUN488MYlBISx7PqX8Lo/lllysH56eKO8nWIMEMGRHvkZzfXYrHj4j4j5NtBuWmgPnkLlzFCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js"
+    integrity="sha512-Hvn3pvXhhG39kmZ8ue3K8hw8obT4rfLXHE5n+IWNCMkR6oV3cfkQNUQqVvX3fNJO/JtFeo/MfLmqp5bqAT+8qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        *{ 
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        a:visited,a:link{
+            text-decoration: none;
+            color: #333;
+        }
+        .container{
+            width: 1000px;margin: 0 auto;
+        }
+        .navbar{
+            display: flex;
+        }
+        .nav{
+            margin-left: auto;
+        }
+        .nav ul{
+            display: flex;
+            gap:10px;
+            height: 40px;
+        }
+        .nav ul>li{
+            padding: 0 10px;
+            height: 100%;
+        }
+        .nav ul li a{
+            display: flex;justify-content: center;align-items: center;height: 100%;
+        }
+        ul,li{ 
+            list-style: none;
+        }
+        /* banner */
+        .banner h3{
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+        .banner ul{
+            display: flex;gap: 20px;
+            flex-wrap: wrap;
+        }
+        .banner li{
+            width: calc(( 100% - 40px ) / 3);
+        }
+        .banner li .img{
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 60%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        /* modal */
+        .modal{width: 400px;
+                position: fixed;
+                left: 50%;top: 50%;
+                transform: translate(-50%,-50%);
+                background: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 30px 0;
+                box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+                border-radius: 10px;
+        }
+        .modal .img{
+            width: 90%;
+        }
+        .modal img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <header class="header">
+            <div class="container">
+
+                <div class="navbar">
+                    <h1><a href="#">{{logo}}</a></h1>
+                    <div class="nav">
+                        <ul>
+                            <li v-for ="(item,i) in menuList">
+                                <a v-bind:href="item.url"> {{menuList[i].menu}}</a>
+                               
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container banner">
+            <h3>공지사항</h3>
+            <ul>
+                <li v-for="(item,i) in noticeData">
+                    <div class="img" :style="{'background-image':`url(img/${item.img})`}">
+                        <!-- style 넣을 때는 {} -->
+                    </div>
+                 
+                        <!-- <img v-bind:src="img/${item.img}" alt=""> -->
+
+                        <h4 @click="modalView=true;modalNum=i">{{noticeData[i].title}}</h4>
+                  
+                </li>
+            </ul>
+        </div>
+        <div class="visual"></div>
+        <div class="footer"></div>
+
+        <div class="modal" v-if="modalView == true">
+            <div class="img">
+                <img v-bind:src="`img/${noticeData[modalNum].img}`" alt="">
+            </div>
+            <h4>
+                {{noticeData[0].title}}
+                <button @click = "modalView=false">닫기</button>
+            </h4>
+        </div>
+    </div>               
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module">
+        import { noticeData,newsData,snsData } from "./data.js";
+        const myWeb = {
+            data(){
+                return{
+                    logo:"chan04",
+                    menuList: [
+                        {menu:"회사소개",url:"http://www.naver.com"},// 1줄이 item
+                        {menu:"wpvna소개",url:"http://www.naver.com"},
+                        {menu:"d소개",url:"http://www.naver.com"},
+                        {menu:"회사dd소개",url:"http://www.naver.com"},
+                    ],
+                    noticeData:noticeData,
+                    modalView:false, //modal 보여줄건지
+                    modalNum:0,//몇번째 보여줄건지
+
+                }
+            }
+        }
+        Vue.createApp(myWeb).mount("#app");
+
+    </script>
+</body>
+</html>
